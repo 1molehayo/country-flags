@@ -1,8 +1,12 @@
 import React from 'react';
-import { Navigation } from 'components';
+import { Navbar } from 'components';
 
-export const Header = () => (
+const Header = () => (
   <header className="header">
-    <Navigation />
+    <div className="header__container">
+      <Navbar />
+    </div>
   </header>
 );
+
+export default Header;

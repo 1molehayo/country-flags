@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Footer = () => (
+const Footer = () => (
   <footer className="footer">
     <div className="container">
-      <p className="paragraph footer__title">Footer</p>
+      <p>Footer</p>
       <div className="copyright">
         &copy; Copyright {new Date().getFullYear()}{' '}
         <a className="copyright__link" href="https://olusegunomilabu.com">
@@ -20,3 +20,5 @@ export const Footer = () => (
     </div>
   </footer>
 );
+
+export default Footer;

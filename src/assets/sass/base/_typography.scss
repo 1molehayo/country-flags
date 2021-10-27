@@ -1,24 +1,31 @@
-.heading {
-  @include respond(small) {
-    @include font-size(medium);
-  }
-
-  @include font-family(playfair);
-  @include font-size(large);
-  @include font-weight(bold);
-  margin-bottom: 1.5rem;
-  color: color(black);
+h1,
+h2,
+h3 {
+  @include font-size(m-large);
+  @include heading;
 }
 
-.paragraph {
-  @include respond(small) {
-    @include font-size(small);
-  }
+h4,
+h5,
+h6 {
+  @include heading;
+  font-size: 2.2rem;
+}
 
-  @include font-family(nunito);
-  @include font-size(regular);
+p,
+li,
+a {
   @include font-weight(regular);
-  line-height: 1.8;
+  @include font-size(medium);
+  line-height: 1.6;
   letter-spacing: 0.2px;
   color: color(grey);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
 }
