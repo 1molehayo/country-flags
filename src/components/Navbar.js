@@ -3,10 +3,12 @@ import { NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
   return (
-    <nav>
-      <div className="container">
-        <NavLink to="/">Country Flags</NavLink>
-      </div>
-    </nav>
+    <div className="container">
+      <nav>
+        <NavLink to="/" className="header__logo">
+          Country Flags
+        </NavLink>
+      </nav>
+    </div>
   );
 };

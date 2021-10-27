@@ -6,17 +6,21 @@
   &__container {
     display: flex;
     align-items: center;
-    height: 7rem;
     width: 100%;
+    height: 7rem;
 
     nav {
+      display: flex;
+      justify-content: space-between;
       width: 100%;
+      padding: 0 2rem;
     }
   }
 
   &__logo {
+    @include font-weight(bold);
     font-size: 2rem;
-    color: color(black);
+    color: color(dark-blue);
 
     @include respond(large) {
       font-size: 2.6rem;

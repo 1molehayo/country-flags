@@ -8,8 +8,9 @@ h3 {
 h4,
 h5,
 h6 {
+  @include font-size(large);
   @include heading;
-  font-size: 2.2rem;
+  text-transform: none;
 }
 
 p,

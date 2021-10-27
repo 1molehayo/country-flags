@@ -1,13 +1,14 @@
 .home {
-  &__products {
-    display: block;
+  padding-top: 2rem;
 
-    @include respond(large) {
-      display: grid;
-      grid-template-columns: 37.5rem calc(100% - 37.5rem);
-    }
+  .card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
   }
 
-  &__sort {
-  }
+  // h3 {
+  //   @include font-size(large);
+  // }
 }
