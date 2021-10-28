@@ -1,0 +1,58 @@
+.switch {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  padding: 0 5px;
+  border: 0;
+  border-radius: 25px;
+
+  @include themed() {
+    background-image: linear-gradient(
+      109.8deg,
+      theme-color('switch-shade1') -5.2%,
+      theme-color('switch-shade2') 0,
+      theme-color('switch-shade3') 103.3%
+    );
+  }
+
+  @include respond(small) {
+    width: 100px;
+    height: 40px;
+  }
+
+  @include respond(large) {
+    cursor: pointer;
+  }
+
+  &--start {
+    justify-content: flex-start;
+  }
+
+  &--end {
+    justify-content: flex-end;
+  }
+
+  &__handle {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: color(white);
+
+    @include respond(small) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__icon {
+    @include font-size(regular);
+    @include themed() {
+      color: theme-color(switch-icon);
+    }
+  }
+}

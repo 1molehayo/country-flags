@@ -1,0 +1,48 @@
+$themes: (
+  default: (
+    logo: #52527a,
+    primary: #2d9cdb,
+    secondary: #fff,
+    switch-shade1: #f43862,
+    switch-shade2: #fdac32,
+    switch-shade3: #fdcb32,
+    switch-icon: #f88748,
+    text-shade1: #656565,
+    text-shade2: #1d1d1d
+  ),
+  dark: (
+    logo: #fff,
+    primary: #fff,
+    secondary: #52527a,
+    switch-shade1: #3e0574,
+    switch-shade2: #290e97,
+    switch-shade3: #d84494,
+    switch-icon: #501a96,
+    text-shade1: #f2f2f2,
+    text-shade2: #fff
+  )
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+// theme colors
+@function theme-color($key) {
+  @return map-get($theme-map, $key);
+}

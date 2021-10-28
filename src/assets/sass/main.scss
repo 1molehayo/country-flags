@@ -1,9 +1,11 @@
 // global
 @import 'global/variables';
+@import 'global/themes';
 @import 'global/functions';
 @import 'global/mixins';
 
 // vendors
+@import 'vendors/icomoon';
 
 // base
 @import 'base/resets';
@@ -13,10 +15,12 @@
 @import 'base/animation';
 
 // components
-@import 'components/button';
 @import 'components/country-card';
+@import 'components/empty-card';
 @import 'components/loader';
+@import 'components/modal';
 @import 'components/pagination';
+@import 'components/switch';
 
 // layout
 @import 'layouts/footer';
@@ -26,6 +30,10 @@
 
 // pages
 @import 'pages/home';
+
+// themes
+@import 'themes/dark';
+@import 'themes/default';
 
 // helpers
 @import 'helpers/grid';

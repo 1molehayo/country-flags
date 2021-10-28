@@ -11,6 +11,7 @@
 
     nav {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       width: 100%;
       padding: 0 2rem;
@@ -20,7 +21,10 @@
   &__logo {
     @include font-weight(bold);
     font-size: 2rem;
-    color: color(dark-blue);
+
+    @include themed() {
+      color: theme-color(logo);
+    }
 
     @include respond(large) {
       font-size: 2.6rem;

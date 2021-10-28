@@ -27,15 +27,9 @@
 
 @mixin heading {
   @include font-weight(bold);
+  @include themed() {
+    color: theme-color(text-shade2);
+  }
   margin-bottom: 1rem;
   line-height: 1.2;
-  text-transform: capitalize;
-  color: color(black);
-}
-
-@mixin sort-button {
-  display: inline-block;
-  border: 0;
-  padding: 0;
-  background: transparent;
 }

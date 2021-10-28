@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Switch } from './Switch';
 
 export const Navbar = () => {
   return (
@@ -8,6 +9,8 @@ export const Navbar = () => {
         <NavLink to="/" className="header__logo">
           Country Flags
         </NavLink>
+
+        <Switch />
       </nav>
     </div>
   );

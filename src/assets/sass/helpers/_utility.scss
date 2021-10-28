@@ -20,7 +20,7 @@
   text-transform: lowercase !important;
 }
 
-.text-lowercase {
+.text-capitalize {
   text-transform: capitalize !important;
 }
 
@@ -102,9 +102,9 @@ $start: 0;
   position: absolute;
   bottom: 0;
   left: 0;
-  border: 2px solid color(light-grey);
-  margin: 0;
   width: 100%;
+  margin: 0;
+  border: 2px solid color(light-grey);
 
   @include respond(large) {
     position: static;

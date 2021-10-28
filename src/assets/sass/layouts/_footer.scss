@@ -1,22 +1,28 @@
 .footer {
-  padding: 2rem 0;
   width: 100%;
+  padding: 2rem 0;
 
   a {
     @include font-weight(bold);
-    color: color(black);
+    @include themed() {
+      color: theme-color(text-shade2);
+    }
 
     @include respond(large) {
       transition: 0.3s ease;
 
       &:hover {
-        color: color(primary);
+        @include themed() {
+          color: theme-color(primary);
+        }
       }
     }
   }
 
   &__text {
     @include font-size(small);
-    color: rgba($color: color(grey), $alpha: 0.7);
+    @include themed() {
+      color: rgba($color: theme-color(text-shade1), $alpha: 0.7);
+    }
   }
 }

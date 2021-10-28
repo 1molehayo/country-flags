@@ -1,14 +1,13 @@
 $colors: (
   ash: #f2f2f2,
-  black: #000000,
+  black: #000,
   dark: #1d1d1d,
   dark-blue: #52527a,
-  green: #219653,
   grey: #656565,
   light-grey: #eee,
   primary: #2d9cdb,
   red: #f00,
-  white: #ffffff
+  white: #fff
 );
 
 $font-families: (
@@ -37,6 +36,7 @@ $max-width: 129rem;
 $gutter-width: 1rem;
 $num-of-columns: 12;
 
+// mobile first
 $break-points: (
   // large mobile phones
   smallest: 480px,
@@ -58,7 +58,3 @@ $device-sizes: (
 );
 
 $sides: (top, bottom, left, right);
-
-$modal-close-position: 5rem;
-
-$header-position: 5;

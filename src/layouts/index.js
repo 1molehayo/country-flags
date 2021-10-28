@@ -5,7 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 
 export const PageLayout = (props) => (
-  <>
+  <div className="page">
     <Header />
 
     <main className={classnames('page-body', props.className)}>
@@ -13,7 +13,7 @@ export const PageLayout = (props) => (
     </main>
 
     <Footer />
-  </>
+  </div>
 );
 
 PageLayout.propTypes = {

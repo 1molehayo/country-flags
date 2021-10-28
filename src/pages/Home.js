@@ -23,8 +23,6 @@ const Home = () => {
         }
 
         const { data } = await axios.get('/all');
-        // eslint-disable-next-line no-console
-        console.log(data);
         setCountries(data);
         localStorage.setItem('countries', JSON.stringify(data));
       } catch (error) {

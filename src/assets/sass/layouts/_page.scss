@@ -1,7 +1,11 @@
 .page {
+  @include themed() {
+    background-color: theme-color(secondary);
+    color: theme-color(text-shade1);
+  }
+
   &-body {
     min-height: 80vh;
-    background-color: color(white);
   }
 
   &--backdrop {

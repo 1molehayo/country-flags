@@ -1,0 +1,15 @@
+/* open sans & montserrat @font-face kit */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap');
+
+/* icomoon @font-face kit */
+@font-face {
+  font-family: 'icomoon';
+  font-style: normal;
+  font-weight: normal;
+  font-display: block;
+  src: url('~assets/fonts/icomoon/icomoon.eot?#iefix')
+      format('embedded-opentype'),
+    url('~assets/fonts/icomoon/icomoon.woff') format('woff'),
+    url('~assets/fonts/icomoon/icomoon.ttf') format('truetype'),
+    url('~assets/fonts/icomoon/icomoon.svg') format('svg');
+}
