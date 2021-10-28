@@ -7,4 +7,17 @@
     justify-content: center;
     width: 100%;
   }
+
+  .refresh-link {
+    @include respond(large) {
+      transition: color 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        @include themed() {
+          color: theme-color(primary);
+        }
+      }
+    }
+  }
 }

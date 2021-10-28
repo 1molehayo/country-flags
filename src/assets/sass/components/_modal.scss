@@ -1,2 +1,114 @@
 .modal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  border-radius: 12px;
+
+  @include themed() {
+    border: 1px solid rgba($color: theme-color(text-shade1), $alpha: 0.3);
+    background: theme-color(secondary);
+  }
+
+  &-backdrop {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    @include themed() {
+      background: rgba($color: theme-color(secondary), $alpha: 0.9);
+    }
+  }
+
+  &__body {
+    width: 100%;
+    padding: 1.5rem 2.5rem;
+  }
+
+  &__close {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: 1.2rem;
+    right: 2.5rem;
+    width: 25px;
+    height: 25px;
+    transition: all 0.3s ease;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    span {
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      transition: all 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
+      background-color: color(red);
+
+      &::after {
+        transition: all 0.3s ease 0.3s;
+        background-color: color(red);
+      }
+
+      &::before {
+        transition: all 0.3s ease;
+        background-color: color(primary);
+      }
+
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+      }
+
+      &:first-child {
+        left: 0;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+      &:last-child {
+        right: 0;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:hover {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+
+      span::after,
+      span::before {
+        width: 100%;
+      }
+
+      span:first-child {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+
+      span:last-child {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__header {
+    position: relative;
+    width: 100%;
+    padding: 1.5rem 2.5rem;
+    border-bottom: 2px solid color(light-grey);
+  }
 }

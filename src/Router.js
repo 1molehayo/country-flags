@@ -32,7 +32,7 @@ const RouterComponent = () => (
         path="/"
         render={(routeProps) => (
           <Suspense fallback={null}>
-            <AnimatePresence initial={false} exitBeforeEnter>
+            <AnimatePresence exitBeforeEnter>
               <Home {...routeProps} />
             </AnimatePresence>
           </Suspense>

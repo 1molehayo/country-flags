@@ -4,11 +4,19 @@
     color: theme-color(text-shade1);
   }
 
+  &--backdrop {
+    overflow: hidden;
+  }
+
   &-body {
     min-height: 80vh;
   }
 
-  &--backdrop {
+  &--no-overflow {
     overflow: hidden;
+  }
+
+  &--default {
+    overflow: auto;
   }
 }

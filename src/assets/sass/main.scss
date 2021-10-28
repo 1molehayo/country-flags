@@ -6,6 +6,7 @@
 
 // vendors
 @import 'vendors/icomoon';
+@import 'vendors/toastify';
 
 // base
 @import 'base/resets';
@@ -16,6 +17,7 @@
 
 // components
 @import 'components/country-card';
+@import 'components/country-details';
 @import 'components/empty-card';
 @import 'components/loader';
 @import 'components/modal';
