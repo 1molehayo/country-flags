@@ -10,7 +10,9 @@ const ContextDefaultValues = {
   countries: [],
   loading: false,
   error: null,
-  onRefresh: null
+  onRefresh: null,
+  url: '/all',
+  onSetUrl: null
 };
 
 export const AppContext = createContext(ContextDefaultValues);
@@ -18,8 +20,14 @@ export const AppContext = createContext(ContextDefaultValues);
 export const AppProvider = ({ children }) => {
   const [isDarkMode, setDarkMode] = useState(greeting().isDark);
   const [refresh, setRefresh] = useState(false);
+  const [url, setUrl] = useState('/all');
+
   const toggleDarkMode = () => setDarkMode((prevState) => !prevState);
   const onRefresh = () => setRefresh(true);
+  const onSetUrl = (e) => {
+    setUrl(e);
+    setRefresh(true);
+  };
 
   useBodyClass(isDarkMode ? 'theme--dark' : 'theme--default');
 
@@ -27,7 +35,7 @@ export const AppProvider = ({ children }) => {
     data: countries,
     loading,
     error
-  } = useFetch('/all', 'countries', refresh, setRefresh);
+  } = useFetch(url, 'countries', refresh, setRefresh);
 
   return (
     <AppContext.Provider
@@ -37,7 +45,9 @@ export const AppProvider = ({ children }) => {
         countries,
         loading,
         error,
-        onRefresh
+        onRefresh,
+        url,
+        onSetUrl
       }}
     >
       {children}

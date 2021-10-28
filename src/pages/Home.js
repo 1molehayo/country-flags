@@ -8,12 +8,16 @@ import Modal from 'components/Modal';
 import { CountryDetails } from 'components/CountryDetails';
 import { useAppContext } from 'contexts/AppContext';
 import useBodyClass from 'services/useBodyClass';
+import { Searchbar } from 'components/Searchbar';
+import { useHistory } from 'react-router';
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState({});
   const [noOverflow, setOverflow] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+  const history = useHistory();
 
   const toggleOverflow = () => setOverflow((prevState) => !prevState);
 
@@ -29,7 +33,8 @@ const Home = () => {
     setModalOpen((prevState) => !prevState);
   };
 
-  const { countries, error, loading, onRefresh } = useAppContext();
+  const { countries, error, loading, onRefresh, url, onSetUrl } =
+    useAppContext();
 
   if (error) {
     notify({
@@ -77,6 +82,26 @@ const Home = () => {
                 </span>{' '}
                 to reload the data
               </p>
+
+              <div className="searchbar-wrapper">
+                <Searchbar
+                  setSearchValue={setSearchValue}
+                  searchValue={searchValue}
+                />
+
+                {url.includes('name') && (
+                  <button
+                    className="clear-button"
+                    onClick={() => {
+                      onSetUrl('/all');
+                      history.push('/');
+                      setSearchValue('');
+                    }}
+                  >
+                    Clear results
+                  </button>
+                )}
+              </div>
             </div>
           </section>
 

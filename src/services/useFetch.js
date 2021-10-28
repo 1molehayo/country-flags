@@ -9,7 +9,6 @@ const useFetch = (url, cached, refresh = false, updateRefresh) => {
 
   useEffect(() => {
     setLoading(true);
-    setData(null);
     setError(null);
 
     const source = Axios.CancelToken.source();
@@ -23,9 +22,10 @@ const useFetch = (url, cached, refresh = false, updateRefresh) => {
     }
 
     axios
-      .get('/all', { cancelToken: source.token })
+      .get(url, { cancelToken: source.token })
       .then((response) => {
         setData(response.data);
+        // console.log(url, response.data);
         localStorage.setItem(cached, JSON.stringify(response.data));
       })
       .catch((err) => {
@@ -39,9 +39,8 @@ const useFetch = (url, cached, refresh = false, updateRefresh) => {
     return () => {
       source.cancel();
     };
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cached, url, refresh, updateRefresh]);
+  }, [cached, refresh]);
 
   return { data, loading, error };
 };

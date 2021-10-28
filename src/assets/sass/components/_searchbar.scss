@@ -1,0 +1,63 @@
+.searchbar {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 3rem auto 0;
+
+  button {
+    @include font-size(large);
+    display: inline-flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border: 0;
+    background: transparent;
+
+    @include respond(large) {
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  input[type='text'] {
+    @include font-size(small);
+    display: inline-block;
+    width: 100%;
+    height: 5rem;
+    padding: 0.3rem 1.3rem;
+    padding-right: 6.3rem;
+    border-radius: 5rem;
+
+    @include themed() {
+      border: 1px solid rgba($color: theme-color(text-shade1), $alpha: 0.5);
+      color: theme-color(text-shade2);
+    }
+  }
+
+  &-wrapper {
+    width: 100%;
+    text-align: center;
+
+    .clear-button {
+      @include font-size(x-small);
+      @include font-weight(bold);
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.8rem;
+      border: 0;
+      border-radius: 2rem;
+
+      @include themed() {
+        background-color: theme-color(primary);
+        color: theme-color(secondary);
+      }
+    }
+  }
+}
